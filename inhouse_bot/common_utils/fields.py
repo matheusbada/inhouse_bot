@@ -4,25 +4,20 @@ from sqlalchemy import Enum
 import rapidfuzz
 import lol_id_tools
 
-roles_list = ["TOP", "JGL", "MID", "BOT", "SUP"]
+roles_list = ["A", "RA", "M", "RB", "B"]
 role_enum = Enum(*roles_list, name="role_enum")
 
-side_enum = Enum("BLUE", "RED", name="team_enum")
+side_enum = Enum("CT", "TR", name="team_enum")
 
 foreignkey_cascade_options = {"onupdate": "CASCADE", "ondelete": "CASCADE"}
 
 # This is a dict used for fuzzy matching
 full_roles_dict = {
-    "top": "TOP",
-    "jgl": "JGL",
-    "jungle": "JGL",
-    "jungler": "JGL",
-    "mid": "MID",
-    "bot": "BOT",
-    "adc": "BOT",
-    "sup": "SUP",
-    "supp": "SUP",
-    "support": "SUP",
+    "a": "A",
+    "ra": "RA",
+    "m": "M",
+    "rb": "RB",
+    "b": "B",
 }
 
 
